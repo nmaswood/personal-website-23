@@ -1,91 +1,154 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+"use client";
+import { Gaegu } from "@next/font/google";
+import { IBM_Plex_Sans } from "@next/font/google";
+import styles from "./page.module.css";
+import Box from "@mui/material/Box";
 
-const inter = Inter({ subsets: ['latin'] })
+const biryani = Gaegu({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main
+      className={styles.main}
+      style={{
+        width: "100%",
+        height: "100%",
+        background: "beige",
+      }}
+    >
+      <Box
+        display="grid"
+        height="100%"
+        width="100%"
+        gridTemplateColumns="auto 1fr"
+        gridTemplateRows="1fr"
+        gap={3}
+      >
+        <Box
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <video
+            loop
+            style={{ width: "fit-content", height: "100vh" }}
+            autoPlay
+            muted
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+            <source src="/cat-splice.mp4" />
+          </video>
+        </Box>
+        <Box display="flex" justifyContent="center" alignItems="center">
+          <Box
+            display="flex"
+            height="100%"
+            width="fit-content"
+            flexDirection="column"
+            justifyContent="center"
+          >
+            <Box width="fit-content" padding={1} marginBottom={1}>
+              <p
+                className={biryani.className}
+                style={{
+                  color: "black",
+                  fontSize: "64px",
+                }}
+              >
+                My name is Nasr and I live in NYC
+              </p>
+            </Box>
+            <Box width="fit-content" padding={1} marginBottom={1}>
+              <p
+                className={biryani.className}
+                style={{
+                  color: "black",
+                  fontSize: "1.5rem",
+                }}
+              >
+                I enjoy:
+              </p>
+            </Box>
+            <Box
+              width="fit-content"
+              padding={1}
+              marginBottom={1}
+              display="flex"
+              gap={2}
+            >
+              🇧🇩
+              <p
+                className={biryani.className}
+                style={{
+                  color: "black",
+                  fontSize: "1.5rem",
+                }}
+              >
+                learning languages
+              </p>
+            </Box>
+            <Box
+              width="fit-content"
+              padding={1}
+              marginBottom={1}
+              display="flex"
+              gap={2}
+            >
+              🗽
+              <p
+                className={biryani.className}
+                style={{
+                  color: "black",
+                  fontSize: "1.5rem",
+                }}
+              >
+                walking around the city
+              </p>
+            </Box>
+            <Box
+              width="fit-content"
+              padding={1}
+              marginBottom={1}
+              display="flex"
+              gap={2}
+            >
+              😺
+              <p
+                className={biryani.className}
+                style={{
+                  color: "black",
+                  fontSize: "1.5rem",
+                }}
+              >
+                hanging out with cats
+              </p>
+            </Box>
+            <Box
+              width="fit-content"
+              padding={1}
+              marginTop={3}
+              display="flex"
+              gap={2}
+            >
+              ✉️
+              <p
+                className={biryani.className}
+                style={{
+                  color: "black",
+                  fontSize: "1.5rem",
+                }}
+              >
+                Get in touch at nasrmaswood@gmail.com
+              </p>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
     </main>
-  )
+  );
 }

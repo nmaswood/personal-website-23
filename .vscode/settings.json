@@ -1,4 +1,4 @@
 {
-  "typescript.tsdk": ".yarn/cache/typescript-patch-de50b73490-2eee5c37ca.zip/node_modules/typescript/lib",
+  "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true
 }

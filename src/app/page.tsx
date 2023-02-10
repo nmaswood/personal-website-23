@@ -1,12 +1,12 @@
 "use client";
 import { Gaegu } from "@next/font/google";
-import { IBM_Plex_Sans } from "@next/font/google";
 import styles from "./page.module.css";
 import Box from "@mui/material/Box";
 
 const biryani = Gaegu({
   subsets: ["latin"],
   weight: "400",
+  display: "block",
 });
 
 export default function Home() {
@@ -27,14 +27,7 @@ export default function Home() {
         gridTemplateRows="1fr"
         gap={3}
       >
-        <Box
-          style={{
-            width: "100%",
-            height: "100%",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
+        <Box width="100%" height="100%" display="flex" justifyContent="center">
           <video
             loop
             style={{ width: "fit-content", height: "100vh" }}
@@ -74,60 +67,10 @@ export default function Home() {
                 I enjoy:
               </p>
             </Box>
-            <Box
-              width="fit-content"
-              padding={1}
-              marginBottom={1}
-              display="flex"
-              gap={2}
-            >
-              🇧🇩
-              <p
-                className={biryani.className}
-                style={{
-                  color: "black",
-                  fontSize: "1.5rem",
-                }}
-              >
-                learning languages
-              </p>
-            </Box>
-            <Box
-              width="fit-content"
-              padding={1}
-              marginBottom={1}
-              display="flex"
-              gap={2}
-            >
-              🗽
-              <p
-                className={biryani.className}
-                style={{
-                  color: "black",
-                  fontSize: "1.5rem",
-                }}
-              >
-                walking around the city
-              </p>
-            </Box>
-            <Box
-              width="fit-content"
-              padding={1}
-              marginBottom={1}
-              display="flex"
-              gap={2}
-            >
-              😺
-              <p
-                className={biryani.className}
-                style={{
-                  color: "black",
-                  fontSize: "1.5rem",
-                }}
-              >
-                hanging out with cats
-              </p>
-            </Box>
+
+            <LineItem emoji="🇧🇩" content="learning languages" />
+            <LineItem emoji="🗽" content="walking around the city" />
+            <LineItem emoji="😺" content="hanging out with cats" />
             <Box
               width="fit-content"
               padding={1}
@@ -152,3 +95,29 @@ export default function Home() {
     </main>
   );
 }
+
+const LineItem: React.FC<{ emoji: string; content: string }> = ({
+  emoji,
+  content,
+}) => {
+  return (
+    <Box
+      width="fit-content"
+      padding={1}
+      marginBottom={1}
+      display="flex"
+      gap={2}
+    >
+      {emoji}
+      <p
+        className={biryani.className}
+        style={{
+          color: "black",
+          fontSize: "1.5rem",
+        }}
+      >
+        {content}
+      </p>
+    </Box>
+  );
+};

@@ -6,11 +6,7 @@
 
 html,
 body {
-  max-width: 100vw;
-  max-height: 100vh;
   height: 100%;
-  width: 100%;
-  background-color: "#F55050";
 }
 
 a {

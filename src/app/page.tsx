@@ -1,10 +1,14 @@
 "use client";
-import { Gaegu } from "@next/font/google";
+import { IBM_Plex_Sans, Codystar } from "@next/font/google";
 import styles from "./page.module.css";
 import Box from "@mui/material/Box";
-import useMediaQuery from "@mui/material/useMediaQuery";
 
-const GAEGU = Gaegu({
+const TITLE = Codystar({
+  subsets: ["latin"],
+  weight: "400",
+  display: "block",
+});
+const BODY = IBM_Plex_Sans({
   subsets: ["latin"],
   weight: "400",
   display: "block",
@@ -12,37 +16,36 @@ const GAEGU = Gaegu({
 
 export default function Home() {
   const Text = () => (
-    <Box
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      flex={1}
-      paddingX={2}
-    >
+    <Box display="flex" width="100%">
       <Box
-        display="flex"
-        height="100%"
-        width="fit-content"
-        flexDirection="column"
-        justifyContent="center"
+        width="min-content"
+        marginBottom={1}
+        paddingLeft={8}
+        paddingTop={"300px"}
       >
-        <Box width="fit-content" padding={1} marginBottom={1}>
+        <p
+          className={TITLE.className}
+          style={{
+            color: "white",
+            fontSize: "84px",
+          }}
+        >
+          Nasr Maswood
+        </p>
+      </Box>
+      <Box>
+        <Box
+          display="flex"
+          padding={1}
+          marginBottom={1}
+          height="100%"
+          alignItems="center"
+        >
           <p
-            className={GAEGU.className}
+            className={BODY.className}
             style={{
               color: "black",
-              fontSize: "64px",
-            }}
-          >
-            My name is Nasr and I live in NYC
-          </p>
-        </Box>
-        <Box width="fit-content" padding={1} marginBottom={1}>
-          <p
-            className={GAEGU.className}
-            style={{
-              color: "black",
-              fontSize: "1.5rem",
+              fontSize: "2rem",
             }}
           >
             I enjoy:
@@ -53,7 +56,7 @@ export default function Home() {
         <LineItem emoji="🗽" content="walking around the city" />
         <LineItem emoji="😺" content="hanging out with cats" />
         <Box
-          width="fit-content"
+          width="min-content"
           padding={1}
           marginTop={3}
           display="flex"
@@ -61,10 +64,10 @@ export default function Home() {
         >
           ✉️
           <p
-            className={GAEGU.className}
+            className={BODY.className}
             style={{
               color: "black",
-              fontSize: "1.5rem",
+              fontSize: "2rem",
             }}
           >
             Get in touch at nasrmaswood@gmail.com
@@ -74,7 +77,7 @@ export default function Home() {
     </Box>
   );
   return (
-    <Box width="100%" height="100%" bgcolor="beige">
+    <Box width="100%" height="100%" bgcolor="orange">
       <Box
         display="flex"
         height="100%"
@@ -100,12 +103,12 @@ const LineItem: React.FC<{ emoji: string; content: string }> = ({
       display="flex"
       gap={2}
     >
-      {emoji}
+      <Box fontSize="2rem">{emoji}</Box>
       <p
-        className={GAEGU.className}
+        className={BODY.className}
         style={{
           color: "black",
-          fontSize: "1.5rem",
+          fontSize: "2rem",
         }}
       >
         {content}

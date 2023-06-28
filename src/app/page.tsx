@@ -59,6 +59,7 @@ export default function Home() {
       <Paper
         sx={{
           width: "100%",
+          maxWidth: "100%",
           height: "100%",
           bgcolor: "primary.main",
           maxHeight: "100%",
@@ -71,6 +72,7 @@ export default function Home() {
           display="flex"
           height="100%"
           width="100%"
+          maxWidth="100%"
           maxHeight="100%"
           overflow="auto"
           gap={2}
@@ -153,8 +155,10 @@ const Bubble: React.FC<{
     <Card
       sx={{
         display: "flex",
-        width: "500px",
-        minHeightt: "100px",
+        width: "350px",
+        maxWidth: "100%",
+        overflow: "auto",
+        minHeight: "100px",
         alignItems: "center",
         alignContent: "center",
         gap: 3,
@@ -192,5 +196,7 @@ const TypingComponent: React.FC<{
     };
   }, []);
 
-  return <Typography fontSize="1.5rem" variant="body1" ref={el} />;
+  return (
+    <Typography overflow="wrap" fontSize="1rem" variant="body1" ref={el} />
+  );
 };

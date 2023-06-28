@@ -480,13 +480,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/font@npm:13.1.6":
-  version: 13.1.6
-  resolution: "@next/font@npm:13.1.6"
-  checksum: 06499c9361d8ecf1bca47f20dfb226b6e9f77668afe967809cd8a4eade1b8620f9d723032098b2a0a9df2d2e2df96ad17e8128fcb7f494c99951ee8a61027966
-  languageName: node
-  linkType: hard
-
 "@next/swc-darwin-arm64@npm:13.4.7":
   version: 13.4.7
   resolution: "@next/swc-darwin-arm64@npm:13.4.7"
@@ -2719,7 +2712,6 @@ __metadata:
     "@emotion/react": ^11.10.5
     "@emotion/styled": ^11.10.5
     "@mui/material": ^5.11.8
-    "@next/font": 13.1.6
     "@types/node": 18.13.0
     "@types/react": 18.0.27
     "@types/react-dom": 18.0.10
@@ -2729,6 +2721,9 @@ __metadata:
     prettier: ^2.8.8
     react: ^18.2.0
     react-dom: ^18.2.0
+    react-transition-group: ^4.4.5
+    typed: ^10.0.0-beta.2
+    typed.js: ^2.0.16
     typescript: ^5.1.3
   languageName: unknown
   linkType: soft
@@ -3284,6 +3279,20 @@ __metadata:
     for-each: ^0.3.3
     is-typed-array: ^1.1.9
   checksum: 2228febc93c7feff142b8c96a58d4a0d7623ecde6c7a24b2b98eb3170e99f7c7eff8c114f9b283085cd59dcd2bd43aadf20e25bba4b034a53c5bb292f71f8956
+  languageName: node
+  linkType: hard
+
+"typed.js@npm:^2.0.16":
+  version: 2.0.132
+  resolution: "typed.js@npm:2.0.132"
+  checksum: f4a612b44f9d0d3cc8dc79739b6b1a22a021941a0889b9ae57edbbede0a2bc1ea698c2ad5cf1814e42859a4fcca2fae87b222ceca2a3f7425ece9affa1ff55c6
+  languageName: node
+  linkType: hard
+
+"typed@npm:^10.0.0-beta.2":
+  version: 10.0.0-beta.2
+  resolution: "typed@npm:10.0.0-beta.2"
+  checksum: da4e519f614dae56a25ba38082cb420b046f25713e4effc6cc2b6d923fbbe9f976fbe5b01be589c263bedcd59919324496a4ce915f5f97283412be36383fb9bc
   languageName: node
   linkType: hard
 

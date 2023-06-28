@@ -21,7 +21,7 @@ const BUSINESS_DOG =
 const NASR = "https://storage.googleapis.com/nasr-public/nasr-icon.png";
 
 const WHAT_ARE_YOU_UP_TO = `
-<p>Well ... I have been reading:</p>
+<p>Well ... I have been reading, most recently:</p>
 
 <br/>
 
@@ -32,14 +32,12 @@ const WHAT_ARE_YOU_UP_TO = `
 </ul>
 <br/>
 
-<p>I've had <a href='https://www.youtube.com/watch?v=AKChFg7ku2A&ab_channel=NicoleMayumi'>
-  See Tình on repeat all summer (that really addicting song from TikTok)
-</a> and have gotten pretty good at the dance.</p>
+<p>I've been exploring NYC</p>
 
 <br/>
 <ul>
 
-<p>I'm also trying to get in shape and have been chasing the holy grail of squatting 315</p>
+<p> and I'm also trying to get in shape and have been chasing the holy grail of squatting 315</p>
 
 
 `;
@@ -120,9 +118,7 @@ export default function Home() {
             {stage >= 4 && (
               <Collapse>
                 <Bubble
-                  content={
-                    "Wow you sound so smart and cool! How can I get in touch?"
-                  }
+                  content={"Wow! Sounds great! How can I get in touch?"}
                   onComplete={onComplete}
                   avatarSrc={BUSINESS_DOG}
                 />

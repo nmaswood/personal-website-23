@@ -46,7 +46,13 @@ const WHAT_ARE_YOU_UP_TO = `
 
 export default function Home() {
   const [stage, setStage] = React.useState(0);
-  const onComplete = () => setStage((prev) => prev + 1);
+  const ref = React.useRef<HTMLDivElement>(null);
+  const onComplete = () => {
+    setStage((prev) => prev + 1);
+    setTimeout(() => {
+      ref?.current?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
 
   return (
     <ThemeProvider theme={THEME}>
@@ -131,6 +137,7 @@ export default function Home() {
               </Collapse>
             )}
           </TransitionGroup>
+          <div style={{ float: "left", clear: "both" }} ref={ref}></div>
         </Box>
       </Paper>
     </ThemeProvider>
@@ -167,25 +174,14 @@ const TypingComponent: React.FC<{
   content: string;
   onComplete: () => void;
 }> = ({ content, onComplete }) => {
-  // Create reference to store the DOM element containing the animation
   const el = React.useRef<HTMLElement>(null);
-
-  const [isMounted, setIsMounted] = React.useState(false);
-  React.useEffect(() => setIsMounted(true), []);
-
-  const cur = el.current;
-  React.useEffect(() => {
-    if (isMounted) {
-      cur?.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [cur, isMounted]);
-
   React.useEffect(() => {
     const typed = new Typed(el.current, {
       strings: [content],
       typeSpeed: 40,
       onComplete: (self: any) => {
         self.cursor.remove();
+
         setTimeout(onComplete, 500);
       },
     });
@@ -196,5 +192,5 @@ const TypingComponent: React.FC<{
     };
   }, []);
 
-  return <Typography fontSize={24} variant="body1" ref={el} />;
+  return <Typography fontSize="1.5rem" variant="body1" ref={el} />;
 };

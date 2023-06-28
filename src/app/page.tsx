@@ -58,6 +58,7 @@ export default function Home() {
           maxHeight: "100%",
           overflow: "auto",
           paddingY: 2,
+          paddingX: 3,
         }}
       >
         <Box

@@ -168,7 +168,17 @@ const TypingComponent: React.FC<{
   onComplete: () => void;
 }> = ({ content, onComplete }) => {
   // Create reference to store the DOM element containing the animation
-  const el = React.useRef(null);
+  const el = React.useRef<HTMLElement>(null);
+
+  const [isMounted, setIsMounted] = React.useState(false);
+  React.useEffect(() => setIsMounted(true), []);
+
+  const cur = el.current;
+  React.useEffect(() => {
+    if (isMounted) {
+      cur?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [cur, isMounted]);
 
   React.useEffect(() => {
     const typed = new Typed(el.current, {

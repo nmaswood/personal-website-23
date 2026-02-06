@@ -1,5 +1,8 @@
+"use cache";
+
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
+import { cacheLife } from "next/cache";
 import { Inter, JetBrains_Mono } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -28,11 +31,14 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({
+// eslint-disable-next-line @typescript-eslint/require-await -- Next.js "use cache" requires async
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  cacheLife("max");
+
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="font-sans antialiased">{children}</body>

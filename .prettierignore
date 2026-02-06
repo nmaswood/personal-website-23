@@ -1,0 +1,7 @@
+.next
+.open-next
+node_modules
+yarn.lock
+packages/*/.next
+packages/*/.open-next
+packages/*/node_modules

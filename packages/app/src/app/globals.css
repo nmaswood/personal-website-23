@@ -3,23 +3,6 @@
 @theme {
   --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
-  --color-orange: #ffa500;
-}
-
-@keyframes collapse-in {
-  from {
-    max-height: 0;
-    opacity: 0;
-  }
-  to {
-    max-height: 300px;
-    opacity: 1;
-  }
-}
-
-.animate-collapse-in {
-  animation: collapse-in 0.4s ease-out forwards;
-  overflow: hidden;
 }
 
 * {

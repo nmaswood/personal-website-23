@@ -16,14 +16,9 @@ export default function Hero() {
         mouseRadius={1}
       />
       <div className="pointer-events-none relative z-10 flex min-h-screen items-center justify-center px-6">
-        <div className="text-center">
-          <h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl">
-            Nasr Maswood
-          </h1>
-          <p className="mt-4 text-lg text-white/80 sm:text-xl">
-            Software Engineer in NYC
-          </p>
-        </div>
+        <h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl">
+          Nasr Maswood
+        </h1>
       </div>
     </div>
   );

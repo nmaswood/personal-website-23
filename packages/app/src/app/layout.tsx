@@ -37,7 +37,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  cacheLife("max");
+  cacheLife({ revalidate: 1800 });
 
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>

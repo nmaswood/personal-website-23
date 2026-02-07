@@ -11,7 +11,14 @@ const nextConfig: NextConfig = {
   },
   cacheComponents: true,
   experimental: {
-    optimizePackageImports: ["react", "react-dom"],
+    optimizePackageImports: [
+      "react",
+      "react-dom",
+      "three",
+      "postprocessing",
+      "@react-three/fiber",
+      "@react-three/postprocessing",
+    ],
   },
   headers: () => [
     {

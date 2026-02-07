@@ -289,6 +289,17 @@ function DitheredWaves({
   );
 }
 
+function ReadyNotifier({ onReady }: { onReady?: (() => void) | undefined }) {
+  const called = useRef(false);
+  useFrame(() => {
+    if (!called.current && onReady) {
+      called.current = true;
+      onReady();
+    }
+  });
+  return null;
+}
+
 export default function DitherBackground({
   waveSpeed = 0.05,
   waveFrequency = 3,
@@ -299,6 +310,7 @@ export default function DitherBackground({
   disableAnimation = false,
   enableMouseInteraction = true,
   mouseRadius = 1,
+  onReady,
 }: {
   waveSpeed?: number;
   waveFrequency?: number;
@@ -309,6 +321,7 @@ export default function DitherBackground({
   disableAnimation?: boolean;
   enableMouseInteraction?: boolean;
   mouseRadius?: number;
+  onReady?: () => void;
 } = {}) {
   return (
     <Canvas
@@ -328,6 +341,7 @@ export default function DitherBackground({
         enableMouseInteraction={enableMouseInteraction}
         mouseRadius={mouseRadius}
       />
+      <ReadyNotifier onReady={onReady} />
     </Canvas>
   );
 }

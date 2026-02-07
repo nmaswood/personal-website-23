@@ -1,3 +1,10 @@
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
 const LINKS = [
   {
     label: "LinkedIn",
@@ -26,114 +33,118 @@ const WRITERS = [
 
 export default function About() {
   return (
-    <section className="relative z-20 bg-neutral-950 px-6 py-24 sm:py-32">
-      <div className="mx-auto max-w-3xl space-y-16">
-        {/* Intro */}
-        <div className="space-y-4">
-          <p className="text-lg leading-relaxed text-neutral-300">
-            Software engineer based in New York. Founder of an AI company in
-            Saudi Arabia. I like building things that feel inevitable in
-            hindsight.
-          </p>
-        </div>
+    <div className="w-full max-w-3xl space-y-4">
+      <p className="text-center text-sm leading-relaxed text-primary/70">
+        Software engineer based in NYC. Founder of a Saudi AI company.
+      </p>
 
-        {/* Current project */}
-        <div className="rounded-lg border border-neutral-800 p-5">
-          <p className="mb-3 font-mono text-xs tracking-widest text-neutral-500 uppercase">
-            Currently Building
-          </p>
-          <p className="text-neutral-300">
-            Working on{" "}
-            <a
-              href="https://saqi.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neutral-300 underline decoration-neutral-700 underline-offset-4 transition-colors hover:text-white hover:decoration-neutral-400"
-            >
-              saqi.app
-            </a>
-            {" "}&mdash; an AI-powered Arabic language platform.
-          </p>
-        </div>
+      <div className="grid grid-cols-3 gap-3">
+        <Card className="gap-3 p-4 text-primary backdrop-blur-sm">
+          <CardHeader className="p-0">
+            <CardTitle className="font-mono text-[10px] tracking-widest text-primary uppercase">
+              Building
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="p-0">
+            <p className="text-sm text-primary">
+              <a
+                href="https://saqi.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-border underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
+              >
+                saqi.app
+              </a>{" "}
+              &mdash; AI Arabic language platform
+            </p>
+          </CardContent>
+        </Card>
 
-        {/* Grid */}
-        <div className="grid gap-8 sm:grid-cols-2">
-          {/* Location */}
-          <Card label="Location">
-            <p className="text-neutral-300">New York City</p>
-          </Card>
+        <Card className="gap-3 p-4 text-primary backdrop-blur-sm">
+          <CardHeader className="p-0">
+            <CardTitle className="font-mono text-[10px] tracking-widest text-primary uppercase">
+              Location
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="p-0">
+            <p className="text-sm text-primary">New York City</p>
+          </CardContent>
+        </Card>
 
-          {/* Links */}
-          <Card label="Links">
-            <ul className="space-y-1">
+        <Card className="gap-3 p-4 text-primary backdrop-blur-sm">
+          <CardHeader className="p-0">
+            <CardTitle className="font-mono text-[10px] tracking-widest text-primary uppercase">
+              Links
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="p-0">
+            <ul className="space-y-0.5">
               {LINKS.map(({ label, href }) => (
                 <li key={label}>
                   <a
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-neutral-300 underline decoration-neutral-700 underline-offset-4 transition-colors hover:text-white hover:decoration-neutral-400"
+                    className="text-sm text-primary underline decoration-border underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
                   >
                     {label}
                   </a>
                 </li>
               ))}
             </ul>
-          </Card>
+          </CardContent>
+        </Card>
 
-          {/* Interests */}
-          <Card label="Interests">
-            <ul className="space-y-1">
+        <Card className="gap-3 p-4 text-primary backdrop-blur-sm">
+          <CardHeader className="p-0">
+            <CardTitle className="font-mono text-[10px] tracking-widest text-primary uppercase">
+              Interests
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="p-0">
+            <ul className="space-y-0.5">
               {INTERESTS.map((item) => (
-                <li key={item} className="text-neutral-300">
+                <li key={item} className="text-sm text-primary">
                   {item}
                 </li>
               ))}
             </ul>
-          </Card>
+          </CardContent>
+        </Card>
 
-          {/* Favorite writers */}
-          <Card label="Favorite Writers">
-            <ul className="space-y-1">
+        <Card className="gap-3 p-4 text-primary backdrop-blur-sm">
+          <CardHeader className="p-0">
+            <CardTitle className="font-mono text-[10px] tracking-widest text-primary uppercase">
+              Writers
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="p-0">
+            <ul className="space-y-0.5">
               {WRITERS.map((name) => (
-                <li key={name} className="text-neutral-300">
+                <li key={name} className="text-sm text-primary">
                   {name}
                 </li>
               ))}
             </ul>
-          </Card>
-        </div>
+          </CardContent>
+        </Card>
 
-        {/* Contact */}
-        <div className="border-t border-neutral-800 pt-12 text-center">
-          <p className="font-mono text-xs tracking-widest text-neutral-500 uppercase">
-            Get in touch
-          </p>
-          <a
-            href="mailto:nasr@maswood.dev"
-            className="mt-2 inline-block text-lg text-neutral-300 underline decoration-neutral-700 underline-offset-4 transition-colors hover:text-white hover:decoration-neutral-400"
-          >
-            nasr@maswood.dev
-          </a>
-        </div>
+        <Card className="gap-3 p-4 text-primary backdrop-blur-sm">
+          <CardHeader className="p-0">
+            <CardTitle className="font-mono text-[10px] tracking-widest text-primary uppercase">
+              Contact
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="p-0">
+            <a
+              href="mailto:nasr@maswood.dev"
+              className="text-sm text-primary underline decoration-border underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
+            >
+              nasr@maswood.dev
+            </a>
+          </CardContent>
+        </Card>
       </div>
-    </section>
-  );
-}
-
-function Card({
-  label,
-  children,
-}: {
-  label: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="rounded-lg border border-neutral-800 p-5">
-      <p className="mb-3 font-mono text-xs tracking-widest text-neutral-500 uppercase">
-        {label}
-      </p>
-      {children}
     </div>
   );
 }
